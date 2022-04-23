@@ -14,15 +14,27 @@ const schema = {
         check('category_no')
             .not().isEmpty()
             .withMessage('Name must have more than 5 characters'),
+        check('language_no')
+            .isArray()
+            .not().isEmpty()
+            .withMessage('Name must have more than 5 characters'),
+        check('image_url')
+            .isArray()
+            .not().isEmpty()
+            .withMessage('Name must have more than 5 characters'),
+        check('social_link')
+            .isArray()
+            .not().isEmpty()
+            .withMessage('Name must have more than 5 characters'),
     ],
-    schema2 : [
-        check('name')
+    getContentList : [
+        check('last_content_no')
             .not().isEmpty()
             .withMessage('Name must have more than 5 characters'),
-        check('name1')
+        check('limit')
             .not().isEmpty()
             .withMessage('Name must have more than 5 characters'),
-    ]
+    ],
 }
 
 module.exports = schema;
