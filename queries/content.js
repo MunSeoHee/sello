@@ -1,10 +1,9 @@
 const sello = require('../database/sello');
 
-exports.insertContent = async function (profile_url, nickname, introduce, category_no) 
+exports.insertContent = function (profile_url, nickname, introduce, category_no) 
 {
     return new Promise(function (resolve, reject) {
         console.log("insert promise");
-        const insertId = null;
         query = `
             INSERT INTO 
                 t_content (profile_url, nickname, introduce, category_no) 
@@ -19,12 +18,11 @@ exports.insertContent = async function (profile_url, nickname, introduce, catego
                 resolve(results.insertId);
             }
         );
-        return insertId;
     });
     
 } 
 
-exports.getContentNoList = async function () 
+exports.getContentNoList = function () 
 {
     return new Promise(function (resolve, reject) {
         query = `
@@ -42,7 +40,7 @@ exports.getContentNoList = async function ()
     });
 } 
 
-exports.getContentList = async function (content_no_list) 
+exports.getContentList = function (content_no_list) 
 {
     return new Promise(function (resolve, reject) {
         query = `
